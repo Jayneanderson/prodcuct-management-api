@@ -1,13 +1,13 @@
-package com.threestyles.productmanagementapi;
+package com.threestyle.productapi;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class ProductManagementApiApplication {
+public class ProductapiApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(ProductManagementApiApplication.class, args);
+		SpringApplication.run(ProductapiApplication.class, args);
 	}
 
 }

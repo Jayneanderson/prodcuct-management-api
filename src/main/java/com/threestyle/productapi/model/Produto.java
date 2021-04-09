@@ -1,4 +1,4 @@
-package com.threestyles.productmanagementapi.model;
+package com.threestyle.productapi.model;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -9,7 +9,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.validation.constraints.NotBlank;
 
-import com.threestyles.productmanagementapi.enums.TipoProduto;
+import com.threestyle.productapi.enums.TipoProduto;
 
 import lombok.Data;
 
@@ -25,9 +25,8 @@ public class Produto {
 	@NotBlank(message = "O nome não pode ser nulo")
 	private String nome;
 
-	@Column(length = 25)
+	@Column(length = 25, nullable = false)
 	@Enumerated(EnumType.STRING)
-	@NotBlank(message = "O tipo não pode ser nulo")
 	private TipoProduto tipo;
 
 }
