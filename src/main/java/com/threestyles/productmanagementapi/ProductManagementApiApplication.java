@@ -1,4 +1,4 @@
-package com.styles.com.productmanagementapi;
+package com.threestyles.productmanagementapi;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
