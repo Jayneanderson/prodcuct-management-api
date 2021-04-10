@@ -2,7 +2,6 @@ package com.threestyle.productapi.controller;
 
 import java.net.URI;
 import java.util.List;
-import java.util.Optional;
 
 import javax.validation.Valid;
 
@@ -40,10 +39,8 @@ public class ProdutoController {
 
 	@GetMapping("/{idproduto}")
 	public ResponseEntity<Produto> findById(@PathVariable("idproduto") Long id) {
-		Optional<Produto> produto = produtoService.getProdutoById(id);
-
-		// uso com operador ternário
-		return produto.isPresent() ? ResponseEntity.ok(produto.get()) : ResponseEntity.notFound().build();
+		Produto produto = produtoService.getProdutoById(id);
+		return ResponseEntity.ok(produto);
 	}
 
 	/*
@@ -78,9 +75,9 @@ public class ProdutoController {
 	 * possível passar o id que será atualizado na própria URL
 	 */
 	@PutMapping("/{id}")
-	public ResponseEntity<Produto> update(@RequestBody Produto produto, @PathVariable("id") Long id) {
-		return produtoService.update(produto, id) == null ? ResponseEntity.notFound().build()
-				: ResponseEntity.ok().build();
+	public ResponseEntity<Produto> update(@RequestBody @Valid Produto produto, @PathVariable("id") Long id) {
+		Produto produtoAtualizado = produtoService.update(produto, id);
+		return ResponseEntity.ok(produtoAtualizado);
 	}
 
 	@DeleteMapping("/{id}")
