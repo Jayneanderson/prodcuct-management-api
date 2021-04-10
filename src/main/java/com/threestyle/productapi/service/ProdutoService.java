@@ -68,13 +68,8 @@ public class ProdutoService {
 
 	}
 
-	public boolean delete(Long id) {
-
-		if (getProdutoById(id).isPresent()) {
-			produtoRepository.deleteById(id);
-			return true;
-		}
-		return false;
+	public void delete(Long id) {
+		produtoRepository.deleteById(id);
 	}
 
 }
