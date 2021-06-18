@@ -21,10 +21,11 @@
 <h2 align="center">📇Guia</h2>
 <p align="center">
     •
-    <a href="#checklist">Chesklist</a> •
+    <a href="#checklist">Checklist</a> •
     <a href="#tecnologias">Tecnologias</a> •
     <a href="#aprendizado">Principal aprendizado</a> • 
     <a href="#dificuldades">Dificuldades</a> •
+    <a href="#links">Links</a> •
     <a href="#autor">Autor</a>
 </p>
 
@@ -62,7 +63,7 @@
 
 * Desenvolvimento de Testes Unitários para validar as operações de gerenciamento de produtos.
 
-<h1>🔗Links interessantes</h1>
+<h1 id="links">🔗Links relacionados</h1>
 
 * [Site oficial do Spring](https://spring.io/)
 * [Site oficial do Spring Initialzr, para setup do projeto](https://start.spring.io/)
