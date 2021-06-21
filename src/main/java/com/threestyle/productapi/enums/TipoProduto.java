@@ -4,15 +4,21 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 
 @Getter
-@AllArgsConstructor
 public enum TipoProduto {
 	
 	ALIMENTOS("alimentos"),
 	HIGIENE("higiene"),
-	BEBIBAS("bebidas"),
+	BEBIDAS("bebidas"),
 	FRUTAS("frutas");
 	
 	
 	private final String message;
 	
+	private TipoProduto(String message) {
+		this.message = message;
+	}
+	
+	public String getMessage() {
+		return message;
+	}
 }

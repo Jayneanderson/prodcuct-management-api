@@ -25,7 +25,7 @@ public class Produto {
 	@NotBlank(message = "O nome não pode ser nulo")
 	private String nome;
 
-	@Column(length = 25, nullable = false)
+	@Column(length = 25, nullable = false, name = "tipo")
 	@Enumerated(EnumType.STRING)
 	private TipoProduto tipo;
 
