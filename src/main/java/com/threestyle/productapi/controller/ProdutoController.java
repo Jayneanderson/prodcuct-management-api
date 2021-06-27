@@ -7,6 +7,7 @@ import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.annotation.Secured;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -49,6 +50,7 @@ public class ProdutoController {
 	 * como resposta
 	 */
 	@PostMapping
+	@Secured({"ROLE_ADMIN"}) //ao colocar essa anotação, eu n consigo usar mais usuário e senha padrões. Tire do properties
 	public ResponseEntity<Produto> create(@RequestBody @Valid Produto produto) {
 
 		Produto produtoSalvo = produtoService.create(produto);
