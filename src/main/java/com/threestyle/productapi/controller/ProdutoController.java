@@ -77,12 +77,14 @@ public class ProdutoController {
 	 * possível passar o id que será atualizado na própria URL
 	 */
 	@PutMapping("/{id}")
+	@Secured({"ROLE_ADMIN"})
 	public ResponseEntity<Produto> update(@RequestBody @Valid Produto produto, @PathVariable("id") Long id) {
 		Produto produtoAtualizado = produtoService.update(produto, id);
 		return ResponseEntity.ok(produtoAtualizado);
 	}
 
 	@DeleteMapping("/{id}")
+	@Secured({"ROLE_ADMIN"})
 	public ResponseEntity delete(@PathVariable("id") Long id) {
 		produtoService.delete(id);
 		return ResponseEntity.ok().build();
