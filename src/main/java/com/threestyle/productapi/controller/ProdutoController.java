@@ -18,15 +18,16 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
-import com.threestyle.productapi.model.Produto;
 import com.threestyle.productapi.service.ProdutoService;
+import com.threestyle.productapi.model.Produto;
+
 
 @RestController
 @RequestMapping("/api/v1/produtos")
 public class ProdutoController {
 
 	@Autowired
-	ProdutoService produtoService;
+	private ProdutoService produtoService;
 
 	@GetMapping()
 	public ResponseEntity<List<Produto>> listAll() {
