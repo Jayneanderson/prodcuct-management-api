@@ -1,21 +1,26 @@
 package com.threestyle.productapi.model;
 
-import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.Size;
+
+import org.springframework.security.core.GrantedAuthority;
 
 import lombok.Data;
 
 @Entity
 @Data
-public class Role {
+public class Role implements GrantedAuthority {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 
 	private String nome;
+
+	@Override
+	public String getAuthority() {
+		// TODO Auto-generated method stub
+		return nome;
+	}
 }
