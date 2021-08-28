@@ -28,5 +28,9 @@ public class Produto {
 	@Column(length = 25, nullable = false, name = "tipo")
 	@Enumerated(EnumType.STRING)
 	private TipoProduto tipo;
+	
+	@NotBlank
+	@Column(name = "url")
+	private String url;
 
 }
