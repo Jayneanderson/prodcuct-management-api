@@ -1,6 +1,5 @@
 package com.threestyle.productapi.enums;
 
-import lombok.AllArgsConstructor;
 import lombok.Getter;
 
 @Getter
