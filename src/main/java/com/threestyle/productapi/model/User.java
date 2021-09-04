@@ -35,7 +35,7 @@ public class User implements UserDetails{ //implementando a UserDetails para ret
 	@NotBlank(message = "O login não pode ser vazio")
 	private String login;
 	
-	@Column(name = "senha", length = 45, nullable = false)
+	@Column(name = "senha", length = 255, nullable = false)
 	@Size(min = 5)
 	@NotBlank(message = "a senha precisa ter 5 caracteres")
 	private String senha;
