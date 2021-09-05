@@ -3,6 +3,8 @@ package com.threestyle.productapi.security;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.http.HttpMethod;
+import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
@@ -25,11 +27,14 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter { //herdando a 
 	//vamos sobrescrever o método configure. Note que, por padrão qualquer request está autenticada
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
+		AuthenticationManager authManager = authenticationManagerBean();
 		http
-		.authorizeRequests()
-		.anyRequest().authenticated()
+		.authorizeRequests()//qualquer request
+		.anyRequest().authenticated()//precisa estar autorizada
+		.antMatchers(HttpMethod.GET, "/api/v1/login").permitAll()//Exceto se for a requisição de login
 		.and().httpBasic()
-		.and().csrf().disable();
+		.and().csrf().disable()
+		.addFilter(null)
 	}
 	//A partir daqui eu estou deixando o basicAuthetication como modelo de autenticação da aplicação
 	//ou seja, sem o form do Spring Boot
